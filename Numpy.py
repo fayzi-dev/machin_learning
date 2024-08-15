@@ -22,7 +22,7 @@
 
     arr = np.array([1, 2, 3, 4])
     # print(arr)
-    arr.shape
+    print(arr.shape)
         
     (4,)
 
@@ -30,7 +30,7 @@
 # Use a tuple to create a NumPy array:
 
     arr_tuple = np.array((1 ,2 ,3 , 4, 5, 6))
-    arr_tuple
+    print(arr_tuple)
         
     array([1, 2, 3, 4, 5, 6])
 # ایجاد آرایه دو بعدی
@@ -42,6 +42,14 @@
     [200 300 400]]
 # (shape) برای نمایش تعداد بعد آرایه
 
-    arr_2_D.shape
+    print(arr_2_D.shape)
         
     (2, 3)
+
+
+# دسترسی به عناصر آرایه ها 
+    arr = np.array([1, 2, 3, 4])
+
+    print(arr[0])
+
+    1
