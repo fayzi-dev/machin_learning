@@ -1,5 +1,5 @@
 # Machin learning
-<!-- # Example Numpy Code by Mohammad fayzi -->
+
 
 # Install Numpy:Install it using this command:
 # pip
@@ -24,17 +24,18 @@
     arr_tuple = np.array((1 ,2 ,3 , 4, 5, 6))
     print(arr_tuple)
  
-# ایجاد آرایه دو بعدی
+# Create a NumPy ndarray Object
 
     arr_2_D = np.array([[10,  20, 30],[200, 300, 400]])
     print(arr_2_D)
         
-# (shape) برای نمایش تعداد بعد آرایه
+# Get the Shape of an Array
 
     print(arr_2_D.shape)
  
 
-# دسترسی به عناصر آرایه ها 
+#Access Array Elements 
+# Array indexing is the same as accessing an array element
    arr = np.array([1, 2, 3, 4])
 
    print(arr[0])
@@ -106,3 +107,13 @@
 
     for x in arr:
     print(x)
+
+# Joining NumPy Arrays
+
+        arr1 = np.array([1, 2, 3])
+
+        arr2 = np.array([4, 5, 6])
+
+        arr = np.concatenate((arr1, arr2))
+
+        print(arr)
