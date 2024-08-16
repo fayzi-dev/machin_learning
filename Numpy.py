@@ -46,3 +46,27 @@
 # We can also define the step, like this: [start:end:step].
     arr_b = np.array([[1, 2, 3],[6, 7, 8],[9, 10, 11]])
     print(arr_b[1:2])
+
+#Checking the Data Type of an Array
+
+    arr_b = np.array([[1, 2, 3],[6, 7, 8],[9, 10, 11]])
+    print(arr_b.dtype)
+# Data Types in NumPy
+# NumPy has some extra data types, and refer to data types with one character, like i for integers, u for unsigned integers etc.
+
+# Below is a list of all data types in NumPy and the characters used to represent them.
+
+# i - integer
+# b - boolean
+# u - unsigned integer
+# f - float
+# c - complex float
+# m - timedelta
+# M - datetime
+# O - object
+# S - string
+# U - unicode string
+# V - fixed chunk of memory for other type ( void )
+# Create an array with data type String:
+    arr_c = np.array(['ali', 'mohammad','hasan'],dtype='S')
+    print(arr_c.dtype)
