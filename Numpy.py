@@ -154,3 +154,40 @@
     x = np.where(arr == 4)
 
     print(x)
+
+# Sorting Arrays
+    arr = np.array([[3, 2, 4], [5, 0, 1]])
+
+    print(np.sort(arr))
+
+# Filter Array
+
+
+    arr = np.array([41, 42, 43, 44])
+
+    filter_arr = arr > 42
+
+    newarr = arr[filter_arr]
+
+    print(filter_arr)
+    print(newarr)
+
+#Generate Random Array
+#Arange
+    rand_3 = np.arange(1, 20, step=2)
+    print(rand_3)
+#Linspace
+    rand_4 = np.linspace(1, 2 ,num=10)
+    print(rand_4)
+#import random 
+    from numpy import random
+#rand
+    rand_arr = random.rand(3, 5)
+    print(rand_arr)
+#Randint
+    rand_1 = random.randint(100, size=4)
+    print(rand_1)
+# Choice
+    x = random.choice([3, 5, 7, 9], size=(3, 5))
+
+    print(x)
