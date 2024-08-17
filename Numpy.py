@@ -128,4 +128,29 @@
     for x in arr:
         print(x)
 
-     
+# 2-D Array
+    arr = np.array([[1, 2, 3], [4, 5, 6]])
+
+    for x in arr:
+    for y in x:
+        print(y)
+
+# Split the 2-D array into three 2-D arrays.
+    arr = np.array([1, 2, 3, 4, 5, 6])
+
+    newarr = np.array_split(arr, 3)
+
+    print(newarr[0])
+    print(newarr[1])
+    print(newarr[2])
+
+
+# Searching Arrays
+# You can search an array for a certain value, and return the indexes that get a match.
+
+# To search an array, use the where() method.
+    arr = np.array([1, 2, 3, 4, 5, 4, 4])
+
+    x = np.where(arr == 4)
+
+    print(x)
