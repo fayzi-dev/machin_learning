@@ -1,3 +1,4 @@
 # Machin learning
 
-    1. Numpy library (It is being completed)
+    1. Numpy library 
+    2. Pandas Library 
