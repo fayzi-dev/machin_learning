@@ -35,9 +35,9 @@
 
 #Access Array Elements 
 # Array indexing is the same as accessing an array element
-   arr = np.array([1, 2, 3, 4])
+   arr_l = np.array([1, 2, 3, 4])
 
-   print(arr[0])
+   print(arr_l[0])
 
 # Slicing arrays برش آرایه ها
 # Slicing in python means taking elements from one given index to another given index.
@@ -200,3 +200,17 @@
     print(np.subtract(arr_1, arr_2))
     print(np.sqrt(arr_1, arr_2))
     print(np.divide(arr_1, arr_2))
+
+
+#And (max, min, sum)
+    arr.max()
+    arr.min()
+    arr.sum()
+
+
+
+#Sort 
+    np.sort(arr)
+
+#Join Array (Concat)
+    np.concatenate(arr_1, arr_2)
