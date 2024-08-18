@@ -191,3 +191,12 @@
     x = random.choice([3, 5, 7, 9], size=(3, 5))
 
     print(x)
+
+#Operation Numpy Array
+
+    arr_1 = random.rand(2, 2)
+    arr_2 = random.rand(2,2)
+    print(np.add(arr_1, arr_2))
+    print(np.subtract(arr_1, arr_2))
+    print(np.sqrt(arr_1, arr_2))
+    print(np.divide(arr_1, arr_2))
