@@ -55,3 +55,36 @@
     print(df.head(10)) #Get a quick overview by printing the first 10 rows of the DataFrame
     print(df.tail()) #Print the last 5 rows of the DataFrame
     print(df.info()) #Print information about the data
+
+# Pandas - Cleaning Data
+    # Pandas - Cleaning Empty Cells
+    df = pd.read_csv('data.csv')
+
+    df.dropna(inplace = True)
+
+    print(df) 
+
+    # Replace NULL values in the "Age" columns with the number 50:
+    df["Age"].fillna(50,inplace=True)
+    print(df.info())
+
+
+    # Pandas - Fixing Wrong Data
+
+        #  Replace value
+        for x in df.index:
+          if df.loc[x, "Duration"] > 12:
+           df.loc[x, "Duration"] = 12
+
+        # Remove Rows
+        for x in df.index:
+          if df.loc[x, "Duration"] > 12:
+            df.drop(x, inplace = True)
+
+        # Removing Duplicates
+        dup_df = df.loc[1:20,["Age"]]
+        # dup_df.duplicated()
+        dup_df.drop_duplicates(inplace=True)
+        print(dup_df)
+
+
