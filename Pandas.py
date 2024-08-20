@@ -87,4 +87,10 @@
         dup_df.drop_duplicates(inplace=True)
         print(dup_df)
 
+        #Pandas - Data Correlations
+            # The corr() method calculates the relationship between each column in your data set
+            dup_df = df.loc[1:20,['Age','Fare']]
+            dup_df.duplicated()
+            dup_df.drop_duplicates(inplace=True)
+            dup_df.corr()
 
