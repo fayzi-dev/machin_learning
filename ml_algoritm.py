@@ -1,11 +1,15 @@
 # Data set :
 
 
-import Numpy as np
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt 
+import seaborn as sns
 
-speed = [99,86,87,88,111,86,103,87,94,78,77,85,86]
 
-x = np.mean(speed)
+df = sns.load_dataset("penguins")
+# print(df)
 
-
-print(x)
+sns.pairplot(df, hue="species")
+plt.show()
+# print(x)
