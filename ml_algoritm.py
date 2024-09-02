@@ -44,6 +44,34 @@ data.replace({'sex':{'Male': 0 ,'Female': 1 }, 'smoker': {'No': 0 , 'Yes': 1}}, 
 
 # print(data.head())
 days = pd.get_dummies(data['day'], dtype=int)
-data = pd.concat([data, days], axis=1)
-print(data.sample(3))
 
+# print(days.sample(10)
+
+data = pd.concat([data, days], axis=1)
+
+times = pd.get_dummies(data['time'], dtype=int)
+data = pd.concat([data, times], axis=1)
+
+# print(data.sample(3))
+X = data[['sex', 'smoker', 'size', 'Fri', 'Sat', 'Sun', 'Dinner']]
+# print(X)
+Y = data[['tip']]
+# print(Y)
+
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn import metrics
+
+
+X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size= 0.25, random_state= 26)
+
+# print(X_train)
+
+reg = LinearRegression()
+reg.fit(X_train, y_train)
+
+
+predict = reg.predict(X_test)
+
+sns.displot(y_test-predict)
+plt.show()
