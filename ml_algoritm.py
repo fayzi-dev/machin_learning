@@ -6,7 +6,7 @@ import pandas as pd
 import matplotlib.pyplot as plt 
 import seaborn as sns
 
-data = pd.read_csv("/home/m-fayzi/Desktop/machin_learning/tips.csv")
+data = pd.read_csv("tips.csv")
 
 
 # print(data.head())
@@ -45,5 +45,5 @@ data.replace({'sex':{'Male': 0 ,'Female': 1 }, 'smoker': {'No': 0 , 'Yes': 1}}, 
 # print(data.head())
 days = pd.get_dummies(data['day'], dtype=int)
 data = pd.concat([data, days], axis=1)
-print(data.sample(10))
+print(data.sample(3))
 
