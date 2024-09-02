@@ -8,6 +8,7 @@ import seaborn as sns
 
 data = pd.read_csv("/home/m-fayzi/Desktop/machin_learning/tips.csv")
 
+
 # print(data.head())
 # print(data.info())
 # print(data.shape)
