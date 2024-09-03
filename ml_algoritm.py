@@ -101,10 +101,7 @@ print('Mean aboulute error:', metrics.mean_absolute_error(y_test,predict))
 print('Mean squared error:', metrics.mean_squared_error(y_test,predict))
 print('Root Mean squared error:', np.sqrt(metrics.mean_squared_error(y_test,predict)))
 
-
-
 # New Data
-
 # print(X.head())
 
 # new_customer = np.array([0,1,2,1,0,0,1]).reshape(1, -1)
