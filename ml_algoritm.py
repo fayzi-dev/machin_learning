@@ -55,7 +55,7 @@ data = pd.concat([data, times], axis=1)
 # print(data.sample(3))
 X = data[['sex', 'smoker', 'size', 'Fri', 'Sat', 'Sun', 'Dinner']]
 # print(X)
-Y = data[['tip']]
+y = data[['tip']]
 # print(Y)
 
 from sklearn.model_selection import train_test_split
@@ -63,13 +63,13 @@ from sklearn.linear_model import LinearRegression
 from sklearn import metrics
 
 
-X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size= 0.25, random_state= 26)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size= 0.25, random_state= 26)
 
 # print(X_train)
+# print(y_train)
 
 reg = LinearRegression()
 reg.fit(X_train, y_train)
-
 
 predict = reg.predict(X_test)
 # print(predict)
@@ -92,9 +92,23 @@ predict = reg.predict(X_test)
 #                 )
 
 
-sns.regplot(data=data, x='total_bill', y='tip')
+# sns.regplot(data=data, x='total_bill', y='tip')
 # pl = sns.PairGrid(data)
 # pl.map(sns.scatterplot)
-plt.show()
+# plt.show()
+
+print('Mean aboulute error:', metrics.mean_absolute_error(y_test,predict))
+print('Mean squared error:', metrics.mean_squared_error(y_test,predict))
+print('Root Mean squared error:', np.sqrt(metrics.mean_squared_error(y_test,predict)))
 
 
+
+# New Data
+
+# print(X.head())
+
+# new_customer = np.array([0,1,2,1,0,0,1]).reshape(1, -1)
+new_customer = np.array([0,1,3,1,0,0,0]).reshape(1, -1)
+# print(new_customer)
+new_customer_Predict = reg.predict(new_customer)
+print(new_customer_Predict)
