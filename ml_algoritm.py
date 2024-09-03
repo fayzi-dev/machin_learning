@@ -72,6 +72,19 @@ reg.fit(X_train, y_train)
 
 
 predict = reg.predict(X_test)
+# print(predict)
+# print(y_test)
 
-sns.displot(y_test-predict)
+# sns.displot(y_test-predict)
+# g = sns.FacetGrid(data, col='time', row='sex')
+# g = sns.FacetGrid(data, col='time', hue='sex')
+# g = sns.FacetGrid(data, col='time')
+# g.map(sns.scatterplot, 'total_bill', 'tip')
+# g.map(sns.scatterplot, 'total_bill','tip','sex')
+# g.map_dataframe(sns.scatterplot, x='total_bill',y='tip',hue='sex')
+# g.add_legend()
+# sns.relplot(data=data, x='total_bill', y='tip', hue='day', col='time', row='sex')
+sns.scatterplot(data=data, x='total_bill', y='tip', hue='size', size='size',
+                sizes=(20, 200), legend='full'
+                )
 plt.show()
