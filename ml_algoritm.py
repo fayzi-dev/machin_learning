@@ -83,8 +83,18 @@ predict = reg.predict(X_test)
 # g.map(sns.scatterplot, 'total_bill','tip','sex')
 # g.map_dataframe(sns.scatterplot, x='total_bill',y='tip',hue='sex')
 # g.add_legend()
-# sns.relplot(data=data, x='total_bill', y='tip', hue='day', col='time', row='sex')
-sns.scatterplot(data=data, x='total_bill', y='tip', hue='size', size='size',
-                sizes=(20, 200), legend='full'
-                )
+# sns.relplot(data=data, x='total_bill', y='tip', hue='day', col='time', row='sex', style='time')
+# sns.relplot(data=data, x='total_bill', y='tip', hue='smoker', style='time')
+# sns.relplot(data=data, x='total_bill', y='tip', hue='smoker', style='time', kind='line')
+# sns.relplot(data=data, x='total_bill', y='tip', size='size')
+# sns.scatterplot(data=data, x='total_bill', y='tip', hue='size', size='size',
+#                 sizes=(20, 200), legend='full'
+#                 )
+
+
+sns.regplot(data=data, x='total_bill', y='tip')
+# pl = sns.PairGrid(data)
+# pl.map(sns.scatterplot)
 plt.show()
+
+
