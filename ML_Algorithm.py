@@ -111,8 +111,8 @@ import seaborn as sns
 # print(new_customer_Predict)
 
 
-data = pd.read_csv('boston.csv')
-data = data.rename(columns={'medv':'price'})
+# data = pd.read_csv('boston.csv')
+# data = data.rename(columns={'medv':'price'})
 
 # print(data.head())
 # print(data.shape)
@@ -145,42 +145,124 @@ data = data.rename(columns={'medv':'price'})
 
 
 # X = data[['zn']]
-X = data[['rm']]
-y = data['price']
+# X = data[['rm']]
+# y = data['price']
 
 # print(X)
 # print(y)
-from sklearn.model_selection import train_test_split
+# from sklearn.model_selection import train_test_split
 
-X_train, X_test, y_train, y_test = train_test_split(X,y, test_size=0.3, random_state = 4)
+# X_train, X_test, y_train, y_test = train_test_split(X,y, test_size=0.3, random_state = 4)
 
 # print(X_train)
 # print(X_test)
 # print(y_train)
 # print(y_test)
 
-from sklearn.linear_model import LinearRegression
+# from sklearn.linear_model import LinearRegression
 
-slr = LinearRegression()
-slr.fit(X_train, y_train)
+# slr = LinearRegression()
+# slr.fit(X_train, y_train)
 
 # print(slr.intercept_)
 # print(slr.coef_)
 
-from sklearn import metrics
+# from sklearn import metrics
 
-y_pred = slr.predict(X_train)
+# y_pred = slr.predict(X_train)
 
-print('R^2:',metrics.r2_score(y_train, y_pred))
-print('MAE:',metrics.mean_absolute_error(y_train, y_pred))
-print('MSE:',metrics.mean_squared_error(y_train, y_pred))
-print('RMSE:',np.sqrt(metrics.mean_squared_error(y_train, y_pred)))
+# print('R^2:',metrics.r2_score(y_train, y_pred))
+# print('MAE:',metrics.mean_absolute_error(y_train, y_pred))
+# print('MSE:',metrics.mean_squared_error(y_train, y_pred))
+# print('RMSE:',np.sqrt(metrics.mean_squared_error(y_train, y_pred)))
 
 
-sns.scatterplot(x=y_train, y=y_pred)
+# sns.scatterplot(x=y_train, y=y_pred)
 # plt.scatter(y_train, y_pred)
-plt.show()
+# plt.show()
 
-sns.displot(y_train-y_pred)
-plt.show()
+# sns.displot(y_train-y_pred)
+# plt.show()
 
+
+#Multiple Linear Regression (MLR)
+
+data = pd.read_csv('boston.csv')
+data = data.rename(columns={'medv':'price'})
+
+X = data.drop(['price'], axis = 1)
+y = data['price']
+# print(X)
+# Spliting DataSets
+
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X,y, test_size = 0.3, random_state = 4)
+
+# print(X_train)
+#Import Llibrary For Linear Regression
+# from sklearn.linear_model import LinearRegression
+
+#Create a Linear Regression 
+# MLR = LinearRegression()
+
+
+#Training The Model
+# MLR.fit(X_train, y_train)
+
+# print(MLR.intercept_)
+# print(MLR.coef_)
+
+# coefficients = pd.DataFrame([X_train.columns,MLR.coef_]).T
+# coefficients = coefficients.rename(columns={0:'Fetures',1: 'Coefficients'})
+# print(coefficients)
+
+# Model Prediction on Train data
+# y_pred = MLR.predict(X_train)
+
+# from sklearn import metrics
+# Model Evaluation
+# print('R ^ 2:', metrics.r2_score(y_train, y_pred))
+# print('MAE :', metrics.mean_absolute_error(y_train, y_pred))
+# print('MSE :', metrics.mean_squared_error(y_train, y_pred))
+# print('RMSE :', np.sqrt(metrics.mean_squared_error(y_train, y_pred)))
+
+
+# Visualizing the differences between actual and predicted values
+# sns.scatterplot(x=y_train, y=y_pred)
+# plt.scatter(y_train, y_pred)
+# plt.show()
+
+# Histogram of Residuals
+# sns.displot(y_train-y_pred)
+# plt.show()
+
+
+
+# Creates a  Polynomial Regression Model for the given degree
+
+from sklearn.preprocessing import PolynomialFeatures
+
+poly_features = PolynomialFeatures(degree = 2)
+
+#Transform the features to degree
+
+quadratic_x_train = poly_features.fit_transform(X_train)
+
+# Fit the transform features to linear regression
+from sklearn.linear_model import LinearRegression
+reg = LinearRegression()
+
+reg.fit(quadratic_x_train, y_train)
+
+# predict on trainig data
+y_train_predict = reg.predict(quadratic_x_train)
+
+# predict onn test data
+y_test_predict = reg.predict(poly_features.fit_transform(X_test))
+
+# R2.score for test data
+from sklearn import metrics
+print('R ^ 2 :', metrics.r2_score(y_test, y_test_predict))
+# R2.score for train data
+from sklearn import metrics
+print('R ^ 2 :', metrics.r2_score(y_train, y_train_predict))
