@@ -6,7 +6,7 @@ import pandas as pd
 import matplotlib.pyplot as plt 
 import seaborn as sns
 
-data = pd.read_csv("tips.csv")
+# data = pd.read_csv("tips.csv")
 
 
 # print(data.head())
@@ -40,38 +40,38 @@ data = pd.read_csv("tips.csv")
 # sns.catplot(x='day', hue='size', kind='count', data=data)
 # plt.show()
 
-data.replace({'sex':{'Male': 0 ,'Female': 1 }, 'smoker': {'No': 0 , 'Yes': 1}}, inplace=True)
+# data.replace({'sex':{'Male': 0 ,'Female': 1 }, 'smoker': {'No': 0 , 'Yes': 1}}, inplace=True)
 
 # print(data.head())
-days = pd.get_dummies(data['day'], dtype=int)
+# days = pd.get_dummies(data['day'], dtype=int)
 
 # print(days.sample(10)
 
-data = pd.concat([data, days], axis=1)
+# data = pd.concat([data, days], axis=1)
 
-times = pd.get_dummies(data['time'], dtype=int)
-data = pd.concat([data, times], axis=1)
+# times = pd.get_dummies(data['time'], dtype=int)
+# data = pd.concat([data, times], axis=1)
 
 # print(data.sample(3))
-X = data[['sex', 'smoker', 'size', 'Fri', 'Sat', 'Sun', 'Dinner']]
+# X = data[['sex', 'smoker', 'size', 'Fri', 'Sat', 'Sun', 'Dinner']]
 # print(X)
-y = data[['tip']]
+# y = data[['tip']]
 # print(Y)
 
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
-from sklearn import metrics
+# from sklearn.model_selection import train_test_split
+# from sklearn.linear_model import LinearRegression
+# from sklearn import metrics
 
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size= 0.25, random_state= 26)
+# X_train, X_test, y_train, y_test = train_test_split(X, y, test_size= 0.25, random_state= 26)
 
 # print(X_train)
 # print(y_train)
 
-reg = LinearRegression()
-reg.fit(X_train, y_train)
+# reg = LinearRegression()
+# reg.fit(X_train, y_train)
 
-predict = reg.predict(X_test)
+# predict = reg.predict(X_test)
 # print(predict)
 # print(y_test)
 
@@ -97,15 +97,53 @@ predict = reg.predict(X_test)
 # pl.map(sns.scatterplot)
 # plt.show()
 
-print('Mean aboulute error:', metrics.mean_absolute_error(y_test,predict))
-print('Mean squared error:', metrics.mean_squared_error(y_test,predict))
-print('Root Mean squared error:', np.sqrt(metrics.mean_squared_error(y_test,predict)))
+# print('Mean aboulute error:', metrics.mean_absolute_error(y_test,predict))
+# print('Mean squared error:', metrics.mean_squared_error(y_test,predict))
+# print('Root Mean squared error:', np.sqrt(metrics.mean_squared_error(y_test,predict)))
 
 # New Data
 # print(X.head())
 
 # new_customer = np.array([0,1,2,1,0,0,1]).reshape(1, -1)
-new_customer = np.array([0,1,3,1,0,0,0]).reshape(1, -1)
+# new_customer = np.array([0,1,3,1,0,0,0]).reshape(1, -1)
 # print(new_customer)
-new_customer_Predict = reg.predict(new_customer)
-print(new_customer_Predict)
+# new_customer_Predict = reg.predict(new_customer)
+# print(new_customer_Predict)
+
+
+data = pd.read_csv('boston.csv')
+data = data.rename(columns={'medv':'price'})
+
+# print(data.head())
+# print(data.shape)
+# print(data.columns)
+# print(data.info())
+# print(data.nunique())
+# print(data.isnull().sum())
+# print(data.describe())
+
+
+
+# def select_data (df, lower ,upper):
+#     mask = (df < lower | df > upper)
+#     selected_data = df[mask]
+#     return select_data
+
+# corr = select_data()
+
+
+corr = data.corr()
+# max_corr =corr[corr >= 0.5]
+# max_corr =corr[corr <= -0.5]
+
+# print(corr.shape)
+# plt.figure(figsize=(10, 10))
+plt.figure(figsize=(15, 8))
+# sns.heatmap(max_corr, annot=True,cmap='coolwarm', cbar=True)
+sns.heatmap(corr, annot=True,cmap='coolwarm', cbar=True)
+plt.show()
+
+
+
+
+
