@@ -132,18 +132,55 @@ data = data.rename(columns={'medv':'price'})
 # corr = select_data()
 
 
-corr = data.corr()
+# corr = data.corr()
 # max_corr =corr[corr >= 0.5]
 # max_corr =corr[corr <= -0.5]
 
 # print(corr.shape)
 # plt.figure(figsize=(10, 10))
-plt.figure(figsize=(15, 8))
+# plt.figure(figsize=(15, 8))
 # sns.heatmap(max_corr, annot=True,cmap='coolwarm', cbar=True)
-sns.heatmap(corr, annot=True,cmap='coolwarm', cbar=True)
+# sns.heatmap(corr, annot=True,cmap='coolwarm', cbar=True)
+# plt.show()
+
+
+# X = data[['zn']]
+X = data[['rm']]
+y = data['price']
+
+# print(X)
+# print(y)
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(X,y, test_size=0.3, random_state = 4)
+
+# print(X_train)
+# print(X_test)
+# print(y_train)
+# print(y_test)
+
+from sklearn.linear_model import LinearRegression
+
+slr = LinearRegression()
+slr.fit(X_train, y_train)
+
+# print(slr.intercept_)
+# print(slr.coef_)
+
+from sklearn import metrics
+
+y_pred = slr.predict(X_train)
+
+print('R^2:',metrics.r2_score(y_train, y_pred))
+print('MAE:',metrics.mean_absolute_error(y_train, y_pred))
+print('MSE:',metrics.mean_squared_error(y_train, y_pred))
+print('RMSE:',np.sqrt(metrics.mean_squared_error(y_train, y_pred)))
+
+
+sns.scatterplot(x=y_train, y=y_pred)
+# plt.scatter(y_train, y_pred)
 plt.show()
 
-
-
-
+sns.displot(y_train-y_pred)
+plt.show()
 
