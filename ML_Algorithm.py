@@ -266,3 +266,5 @@ print('R ^ 2 :', metrics.r2_score(y_test, y_test_predict))
 # R2.score for train data
 from sklearn import metrics
 print('R ^ 2 :', metrics.r2_score(y_train, y_train_predict))
+
+
