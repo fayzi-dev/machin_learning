@@ -11,7 +11,7 @@ x = df.drop(['Purchased'], axis=1).values
 y = df['Purchased'].values
 # print(y)
 
-# Missing Values
+# Missing Values 
 #Solution 1  For Select data by Dropna
 df_dropna = df.copy()
 print('Before:', df_dropna.shape)
@@ -34,7 +34,7 @@ print(df_fillna.isnull().sum())
 from sklearn.impute import SimpleImputer
 imputer = SimpleImputer(missing_values =np.nan, strategy='median')
 # imputer = SimpleImputer(missing_values =np.nan, strategy='mean')
-imputer.fit_transform(x[:, 1:3])
+x[:, 1:3] = imputer.fit_transform(x[:, 1:3])
 # imputer.fit(x[:, 1:3])
 # x[:, 1:3] = imputer.transform(x[:, 1:3])
 print(x)
