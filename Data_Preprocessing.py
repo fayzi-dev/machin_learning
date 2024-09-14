@@ -31,10 +31,10 @@ y = df['Purchased'].values
 
 
 #Solution 3 use scikit-learn
-# from sklearn.impute import SimpleImputer
+from sklearn.impute import SimpleImputer
 # imputer = SimpleImputer(missing_values =np.nan, strategy='median')
-# imputer = SimpleImputer(missing_values =np.nan, strategy='mean')
-# x[:, 1:3] = imputer.fit_transform(x[:, 1:3])
+imputer = SimpleImputer(missing_values =np.nan, strategy='mean')
+x[:, 1:3] = imputer.fit_transform(x[:, 1:3])
 # imputer.fit(x[:, 1:3])
 # x[:, 1:3] = imputer.transform(x[:, 1:3])
 # print(x)
