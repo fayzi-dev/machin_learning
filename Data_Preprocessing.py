@@ -72,3 +72,25 @@ print(X_train)
 print(X_test)
 print(y_train)
 print(y_test)
+
+
+
+
+#Feature Scaling
+
+# 1. Min Max Scaler (Normalization)  [0 1]
+# from sklearn.preprocessing import MinMaxScaler
+# min_max = MinMaxScaler()
+# X_train[:, 3:] = min_max.fit_transform(X_train[:, 3:])
+# X_test[:, 3:] = min_max.transform(X_test[:, 3:])
+# print(X_train)
+# print(X_test)
+
+# 2. Standard Scaler [-1 1]
+from sklearn.preprocessing import StandardScaler
+stan_scal = StandardScaler()
+X_train[: , 3:] = stan_scal.fit_transform(X_train[: , 3:])
+print(X_train)
+print('*******************')
+X_test[:, 3:] = stan_scal.transform(X_test[: , 3:])
+print(X_test)
