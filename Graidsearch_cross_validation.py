@@ -30,11 +30,11 @@ x_test = sc.transform(X_test)
 from sklearn.svm import SVC
 
 classifier = SVC(kernel='rbf', random_state = 0)
-print(classifier.fit(X_train, y_train))
+print(classifier.fit(x_train, y_train))
 
 #Making The Confusion Matrix
 from sklearn.metrics import confusion_matrix, accuracy_score
-y_pred = classifier.predict(X_test)
+y_pred = classifier.predict(x_test)
 cm = confusion_matrix(y_test, y_pred)
 print(cm)
 
@@ -47,6 +47,6 @@ print('Accuraxy Befor k-Fold:',Accuracy_Score)
 
 from sklearn.model_selection import cross_val_score
 accurecies = cross_val_score(estimator=classifier, X= x_train, y= y_train, cv = 10)
-print(accurecies)
+# print(accurecies)
 print('Accuracy After k-Fold:',accurecies.mean() * 100 )
 print('Standard Deviation:',accurecies.std() * 100 )
