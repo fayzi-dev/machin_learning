@@ -6,3 +6,4 @@
     4. Multivariable Linear Regression
     5. Logistic Regression
     6. Data Preprocessiong 
+    7. KNN (k Nearast neighbor) Algorithm
