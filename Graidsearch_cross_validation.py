@@ -20,6 +20,8 @@ y = dataset.iloc[:, -1].values
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X,y, test_size =0.2 ,random_state=1)
 # print(X_train)
+
+
 #Standard Scaler
 from sklearn.preprocessing import StandardScaler
 sc = StandardScaler()
