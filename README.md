@@ -7,3 +7,4 @@
     5. Logistic Regression
     6. Data Preprocessiong 
     7. KNN (k Nearest neighbor) Algorithm
+    8. Naive Bayes
