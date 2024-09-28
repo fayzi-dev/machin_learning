@@ -10,3 +10,4 @@
     8. Naive Bayes
     9. Support Vector Machin (SVM)
     10. Decision Tree 
+    11. Random Forest 
