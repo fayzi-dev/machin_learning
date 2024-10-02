@@ -60,8 +60,8 @@ y_pred_train = classifier.predict(X_train)
 y_pred_test = classifier.predict(X_test)
 
 from sklearn.metrics import accuracy_score,f1_score, confusion_matrix
-print('F1_score_train_Data:', f1_score(y_train, y_pred_train))
-print('F1_score_test_Data:', f1_score(y_test, y_pred_test))
+# print('F1_score_train_Data:', f1_score(y_train, y_pred_train))
+# print('F1_score_test_Data:', f1_score(y_test, y_pred_test))
 
 # Built-in feature importance (Gini Importance)
 
@@ -75,4 +75,33 @@ fig, ax = plt.subplots(figsize=(18,8))
 Random_F_C = ax.barh(index, feature_imp_df['importances'], 0.4, color='blue', label= 'Random Forest')
 ax.set(yticks=index+0.4, yticklabels=feature_imp_df.index)
 ax.legend()
+# plt.show()
+
+
+#Random Forest Regression
+data = pd.read_csv('/home/m-fayzi/Desktop/machin_learning/Position_Salaries.csv')
+# print(data.head())
+# print(data.info())
+
+X = data.iloc[:,1:2].values
+y = data.iloc[:, 2].values
+
+# print(X, y)
+
+from sklearn.ensemble import RandomForestRegressor
+regressor = RandomForestRegressor(n_estimators= 100, random_state= 0)
+regressor.fit(X,y)
+
+y_pred = regressor.predict([[5.6]])
+print(y_pred)
+
+#Graph
+x_grid =np.arange(min(X), max(X), 0.01)
+x_grid = x_grid.reshape(len(x_grid), 1)
+
+plt.scatter(X, y ,color='red')
+plt.plot(x_grid, regressor.predict(x_grid), color='blue')
+plt.title('Random Forest Regression')
+plt.xlabel('Position level')
+plt.ylabel('Salary')
 plt.show()
