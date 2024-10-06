@@ -12,4 +12,5 @@
     10. Decision Tree 
     11. Random Forest 
     12. XGBoost Model
-    13. KMeans Cluster Model
+    13. K-Means Cluster Model (unsupervised learning)
+    14. DBScan Cluster Model(unsupervised learning)
