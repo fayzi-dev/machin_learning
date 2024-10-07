@@ -14,3 +14,4 @@
     12. XGBoost Model
     13. K-Means Cluster Model (unsupervised learning)
     14. DBScan Cluster Model(unsupervised learning)
+    15. PCA (Principal Component Analysis)
