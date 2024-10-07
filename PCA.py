@@ -8,7 +8,7 @@ import seaborn as sns
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 # Import datasets
-df = pd.read_csv('iris.csv')
+df = pd.read_csv('/home/m-fayzi/Desktop/machin_learning/Datasets/iris.csv')
 X = df.iloc[:, 0:4].values
 y = df.iloc[:, 4].values
 

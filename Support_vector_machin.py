@@ -6,7 +6,7 @@ import sklearn
 
 
 
-df = pd.read_csv('/home/m-fayzi/Desktop/machin_learning/mobile_price_range_data.csv')
+df = pd.read_csv('/home/m-fayzi/Desktop/machin_learning/Datasets/mobile_price_range_data.csv')
 # print(df.head())
 # print(df.info())
 # print(df['price_range'].value_counts())
@@ -44,7 +44,7 @@ from sklearn.metrics import accuracy_score,classification_report, confusion_matr
 
 
 #SVR Model
-data = pd.read_csv('/home/m-fayzi/Desktop/machin_learning/Position_Salaries.csv')
+data = pd.read_csv('/home/m-fayzi/Desktop/machin_learning/Datasets/Position_Salaries.csv')
 # print(data)
 X = data.iloc[:, 1:2].values
 y = data.iloc[:, 2:3].values

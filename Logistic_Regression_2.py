@@ -6,7 +6,7 @@ import matplotlib.pylab as plt
 import seaborn as sns
 import sklearn
 
-# data = pd.read_csv('/home/m-fayzi/Desktop/machin_learning/iris.csv')
+# data = pd.read_csv('/home/m-fayzi/Desktop/machin_learning/Datasets/iris.csv')
 
 # print(data)
 # print(data.head())

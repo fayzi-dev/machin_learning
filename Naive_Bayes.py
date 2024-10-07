@@ -6,7 +6,7 @@ import sklearn
 import warnings
 warnings.filterwarnings('ignore')
 
-df = pd.read_csv('/home/m-fayzi/Desktop/machin_learning/social_network_ads.csv')
+df = pd.read_csv('/home/m-fayzi/Desktop/machin_learning/Datasets/social_network_ads.csv')
 # 
 # print(df.head())
 # print(df.info())

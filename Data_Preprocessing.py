@@ -5,7 +5,7 @@ import seaborn as sns
 import sklearn
 
 
-df = pd.read_csv('/home/m-fayzi/Desktop/machin_learning/Data.csv')
+df = pd.read_csv('/home/m-fayzi/Desktop/machin_learning/Datasets/Data.csv')
 # print(df.shape)
 x = df.drop(['Purchased'], axis=1).values
 y = df['Purchased'].values

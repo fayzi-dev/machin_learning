@@ -7,7 +7,7 @@ import seaborn as sns
 import sklearn
 import sklearn.metrics
 
-# data = pd.read_csv('iris.csv')
+# data = pd.read_csv('/Datasets/iris.csv')
 # print(data.head())
 # print(data['variety'].value_counts())
 # print(data.info())

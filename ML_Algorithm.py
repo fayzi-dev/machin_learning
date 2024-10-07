@@ -6,7 +6,7 @@ import pandas as pd
 import matplotlib.pyplot as plt 
 import seaborn as sns
 
-# data = pd.read_csv("tips.csv")
+# data = pd.read_csv("Datasets/tips.csv")
 
 
 # print(data.head())
@@ -111,7 +111,7 @@ import seaborn as sns
 # print(new_customer_Predict)
 
 
-# data = pd.read_csv('boston.csv')
+# data = pd.read_csv('/Datasets/boston.csv')
 # data = data.rename(columns={'medv':'price'})
 
 # print(data.head())
@@ -187,7 +187,7 @@ import seaborn as sns
 
 #Multiple Linear Regression (MLR)
 
-data = pd.read_csv('boston.csv')
+data = pd.read_csv('Datasets/boston.csv')
 data = data.rename(columns={'medv':'price'})
 
 X = data.drop(['price'], axis = 1)

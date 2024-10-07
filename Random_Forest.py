@@ -6,7 +6,7 @@ import sklearn
 import warnings
 warnings.filterwarnings('ignore')
 
-df = pd.read_csv('/home/m-fayzi/Desktop/machin_learning/Loan_data.csv')
+df = pd.read_csv('/home/m-fayzi/Desktop/machin_learning/Datasets/Loan_data.csv')
 # print(df.info())
 # print(df.head())
 
@@ -79,7 +79,7 @@ ax.legend()
 
 
 #Random Forest Regression
-data = pd.read_csv('/home/m-fayzi/Desktop/machin_learning/Position_Salaries.csv')
+data = pd.read_csv('/home/m-fayzi/Desktop/machin_learning/Datasets/Position_Salaries.csv')
 # print(data.head())
 # print(data.info())
 

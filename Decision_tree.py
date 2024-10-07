@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import sklearn
 
-df = pd.read_csv('/home/m-fayzi/Desktop/machin_learning/social_network_ads.csv')
+df = pd.read_csv('/home/m-fayzi/Desktop/machin_learning/Datasets/social_network_ads.csv')
 
 # X = df.iloc[:, 2:4].values
 # y = df.iloc[:, 4].values
@@ -39,7 +39,7 @@ from sklearn.metrics import confusion_matrix, accuracy_score
 
 ###Decision tree Regression
 
-data = pd.read_csv('/home/m-fayzi/Desktop/machin_learning/Position_Salaries.csv')
+data = pd.read_csv('/home/m-fayzi/Desktop/machin_learning/Datasets/Position_Salaries.csv')
 # print(data.info())
 
 

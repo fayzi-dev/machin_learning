@@ -6,7 +6,7 @@ import sklearn
 
 # Cross_validation
 
-dataset = pd.read_csv('/home/m-fayzi/Desktop/machin_learning/social_network_ads.csv')
+dataset = pd.read_csv('/home/m-fayzi/Desktop/machin_learning/Datasets/social_network_ads.csv')
 dataset.drop(['User ID', 'Gender'], axis=1, inplace=True)
 # print(dataset)
 # print(dataset.columns)

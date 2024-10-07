@@ -6,7 +6,7 @@ import seaborn as sns
 import sklearn
 
 
-df = pd.read_csv('/home/m-fayzi/Desktop/machin_learning/Mall_Customers.csv')
+df = pd.read_csv('/home/m-fayzi/Desktop/machin_learning/Datasets/Mall_Customers.csv')
 # print(df.head())
 X = df.iloc[:, [3, 4]]. values
 # print(X)

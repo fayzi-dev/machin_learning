@@ -13,7 +13,7 @@ from sklearn.metrics import accuracy_score, mean_squared_error, mean_absolute_er
 
 """**Clsddifier model XGBoost**"""
 
-# df = pd.read_csv("/content/drive/MyDrive/Colab Notebooks/diabetes.csv")
+# df = pd.read_csv("Datasets/diabetes.csv")
 # df
 
 # X = df.iloc[:, :-1].values
@@ -37,7 +37,7 @@ from sklearn.metrics import accuracy_score, mean_squared_error, mean_absolute_er
 
 """**Regression Model XGBoost**"""
 
-data = pd.read_csv("/content/drive/MyDrive/Colab Notebooks/co2.csv")
+data = pd.read_csv("Datasets/co2.csv")
 data.info()
 
 data['Month'] = data.YYYYMM.astype('str').str[4:6].astype(float)
