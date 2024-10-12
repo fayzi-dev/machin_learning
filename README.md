@@ -15,3 +15,4 @@
     13. K-Means Cluster Model (unsupervised learning)
     14. DBScan Cluster Model(unsupervised learning)
     15. PCA (Principal Component Analysis)
+    16. Polynomial Regression
