@@ -17,7 +17,7 @@
     15. PCA (Principal Component Analysis)
     16. Polynomial Regression
 
-    Machine learning is a subset of artificial intelligence (AI) that focuses on the development of algorithms and statistical models that enable computers to perform tasks without being explicitly programmed for each specific task. Instead, machine learning systems learn from data, identifying patterns and making predictions or decisions based on that data.
+Machine learning is a subset of artificial intelligence (AI) that focuses on the development of algorithms and statistical models that enable computers to perform tasks without being explicitly programmed for each specific task. Instead, machine learning systems learn from data, identifying patterns and making predictions or decisions based on that data.
 
 ### Key Concepts
 
